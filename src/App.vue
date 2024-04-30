@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+import {loginCode} from '@/api/api'
+let result = await loginCode()
+console.log(result, 'result');
+
 </script>
 
 <template>

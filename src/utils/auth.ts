@@ -1,3 +1,4 @@
+//#-tsignore
 import Cookies from 'js-cookie'
 import {HttPRequest } from './http'
 // 随着实际情况变化而变化

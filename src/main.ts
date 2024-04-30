@@ -7,7 +7,8 @@ import { createPinia } from 'pinia'
 // import 'element-plus/dist/index.css'
 import App from './App.vue'
 import router from './router'
-
+/**引入http请求 */
+import http from '@/utils/httpRequest'
 const app = createApp(App)
 // 客户端侧
 console.log(' import.meta.env.MODE: ',  import.meta.env);
@@ -15,5 +16,6 @@ console.log(' import.meta.env.MODE: ',  import.meta.env);
 app.use(createPinia())
 // app.use(ElementPlus)
 app.use(router)
-
+/**将请求挂载到全局 */
+app.config.globalProperties.$http = http
 app.mount('#app')

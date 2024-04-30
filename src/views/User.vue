@@ -23,6 +23,7 @@ console.log("***************");
 console.log(useInfo);
 console.log("***************");
 
+
 // pinia的解构,解构出来的数据是非响应式是数据,不能直接进行修改
 // let {name,age} = storeToRefs(useInfo)
 // console.log('/////////////////');
