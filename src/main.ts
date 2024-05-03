@@ -1,4 +1,3 @@
-import './assets/main.css'
 
 import { createApp } from 'vue'
 /**第一步: 引入pinia */
@@ -11,7 +10,7 @@ import router from './router'
 import http from '@/utils/httpRequest'
 const app = createApp(App)
 // 客户端侧
-console.log(' import.meta.env.MODE: ',  import.meta.env);
+
 // 第二步: 注册挂载到app上面
 app.use(createPinia())
 // app.use(ElementPlus)

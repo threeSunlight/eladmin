@@ -40,7 +40,10 @@ interface Data {
 
 /**私有部分data是私有的 */
 interface DateContent<T>  extends  Data {
+
     data:{
+        img?: string,
+        uuid?: string,
         content: T,
         totalElements: number
     }
@@ -58,3 +61,5 @@ export {
 HttPRequest
 }
 export type { DateContent,Config,Credentials}
+
+

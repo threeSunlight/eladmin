@@ -41,6 +41,8 @@ const config = {
   }
 }
 
+//ES5
+
 
 // 用class类声明我们当前一个类命  http
 class Http {
