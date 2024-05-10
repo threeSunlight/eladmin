@@ -6,20 +6,21 @@
 import EchartsCommon from '@/components/EchartsCommon.vue'
 /**引入饼状图的hooks思想 */
 import useBarOptions from '@/hooks/useBarOptions'
-import * as echarts from 'echarts'
+
 /**解构饼状图 */
 const { zhuang, classStyle, options } = useBarOptions()
 
 const echart_china = ref()
-
+// import "@/assets/js/china"
 //引入json数据
 import chinamap from '@/assets/json/china.json'
-console.log(chinamap, 'chinamap')
+const { proxy } = getCurrentInstance() as any;
+// console.log(chinamap, 'chinamap')
 onMounted(() => {
   // 1. 创建一个 ECharts 实例，返回 echartsInstance，不能在单个容器上初始化多个 ECharts 实例
-  let myChart = echarts.init(echart_china.value)
+  let myChart = proxy.$echarts.init(echart_china.value)
   //2. 注册可用的地图，只在 geo 组件或者map图表类型中使用
-  echarts.registerMap('china', chinamap)
+  proxy.$echarts.registerMap('china', chinamap)
   // 3. 设置图表 option
   var option = {
     dataRange: {
@@ -66,7 +67,8 @@ onMounted(() => {
       {
         name: '中国地图',
         type: 'map',
-        map: 'china',
+       // mapType: 'china',
+         map: 'china',
         label: {
           normal: {
             show: true, // 显示省份标签

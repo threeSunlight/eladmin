@@ -6,6 +6,7 @@ import { createPinia } from 'pinia'
 // import 'element-plus/dist/index.css'
 import App from './App.vue'
 import router from './router'
+import  echarts from 'echarts'
 /**引入http请求 */
 import http from '@/utils/httpRequest'
 const app = createApp(App)
@@ -17,4 +18,6 @@ app.use(createPinia())
 app.use(router)
 /**将请求挂载到全局 */
 app.config.globalProperties.$http = http
+app.config.globalProperties.$echarts = echarts
+
 app.mount('#app')
